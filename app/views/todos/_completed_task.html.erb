@@ -1,0 +1,11 @@
+<div class="task" id='complete_task_<%= todo.id %>'>
+	<div class="todo_link">
+		<div class="button delete_button todo_delete" id="delete_button_<%=todo.id%>">
+			<span class="todo_drop_icon"></span>
+		</div>
+		<%= check_box_tag 'todo_title', todo.completed, true, data:{"id" => todo.id}, :class => "task_check", :id => "complete_task_check_#{todo.id}" %>
+		<p class="title" id='complete_title_<%= todo.id %>'><%= todo.title %></p>
+		<p class="title_category"><%= todo.category.name %></p>
+		<p class="title_date"><%= todo.updated_at.strftime("%d %b %Y") %></p>
+	</div>
+</div>

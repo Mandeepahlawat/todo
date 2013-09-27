@@ -1,0 +1,27 @@
+<%= render 'layouts/tab' %>
+<div id="container">
+  <div class="container_header">
+		<h4>Send your Message</h4>
+	</div>
+	<div class="container_data">
+    <%# debugger %>
+		<%= semantic_form_for([@user,@message]) do |f| %>
+		  <div class="fields">
+		  	<%= f.inputs do %>
+		    	<%= f.input :subject, :input_html => { rows: 1, cols: 75} %>
+		    	<%= f.input :body, :as => :text, :input_html => { rows: 25, cols:75} %>
+		    	<%for user in @users%>
+		    		<%=f.fields_for @message.messages_users.new do |mu|%>
+		    			<%#=check_box_tag 'messages_users_attributes[user_ids][]', user.id, false %>
+		    			<%= mu.check_box :user_id, {}, user.id, nil%> 
+		    			<%=user.email%>
+		    		<%end%>
+		    	<%end%>
+		    <% end %>
+		  </div>
+	  	<%= f.actions do %>
+	   		<% f.action :submit, :label => "Send Message" %>
+	   	<% end %>		  
+    <% end %>
+  </div>
+</div>

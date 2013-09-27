@@ -1,0 +1,10 @@
+<div class="task_category">
+	<div class="button delete_button" id="delete_button_<%=task.id%>">
+		<span class="delete_icon" id="delete_icon_<%=task.id%>">
+			<%= link_to '',user_task_path(@user.id,task.id) , method: :delete, data: { confirm: 'Deleting this category will delete all its to-dos as well. Are you sure? ' } %>
+		</span>
+		<span class="drop_icon"></span>
+	</div>
+	<div class="link"><%= link_to task.title, user_task_todos_path(@user.id,task.id),:class => "show_delete" %></div>
+	<%#= link_to 'Delete',user_task_path(@user.id,task.id) , method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>

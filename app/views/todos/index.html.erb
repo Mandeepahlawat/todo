@@ -1,0 +1,64 @@
+<%= render 'layouts/tab' %>
+<div id="container">
+  <div class="swap_to">
+    <div class="container_header clearfix">
+      <h4>New to-do</h4>
+    </div>
+
+    <div class="container_data">
+      <%= form_for([@user,@task,@todo], remote: true) do |f| %>
+			  <p>
+			    <%= f.label :title, "Enter your todo" %><br/>
+			    <%= f.text_field :title, :class => "todos_title" %>
+          <%= f.collection_select(:category_id, Category.all,:id, :name) %>
+			  </p>
+        <p id="submit">
+			    <%= f.submit %>
+			  </p>
+			<% end %>
+      <a href="">Back</a>
+    </div>
+  </div>
+
+  <div class="swap_from">
+    <div class="container_header clearfix">
+      <h4>All Tasks</h4>
+      <p>
+        <b>Download :</b>
+        <%= link_to "CSV", user_task_todos_path(format: "csv") %> ||
+        <%= link_to "Excel", user_task_todos_path(format: "xls") %>
+      </p>
+
+      <%= form_tag user_task_todos_path(@user.id,@task.id),:id => 'search_form', :method => 'get' do %>
+        <p>
+          <%= text_field_tag :search, params[:search] %>
+          <%= submit_tag "Search", :title => nil %>
+        </p>
+      <% end %>
+    </div>
+    <a href="" id="show_new_task">Add New Task</a>
+    <div>
+      <div id="incomplete_tasks">
+  			<h4>Incompleted tasks</h4> 
+  			<% @todos.each do |todo| %>
+  				<% if todo.completed.nil? || todo.completed == false %>
+  					<%= render :partial => "todo", :locals => {:todo => todo} %>
+  				<% end %>
+  			<% end %>
+      </div>
+      <a href="" id="add_item">Add an item</a>
+      <div id="hidden_form"><%= render :partial => "form" %></div>
+    </div>
+
+		<div id="completed_tasks">
+			<h4>Completed Tasks</h4>
+			<% @todos.each do |todo| %>
+				<% if todo.completed == true %>
+					<%= render :partial => "completed_task", :locals => {:todo => todo} %>
+				<% end %>
+			<% end %>
+		</div>
+		<%= link_to "Back",user_tasks_path(@user.id) %>
+</div>
+
+

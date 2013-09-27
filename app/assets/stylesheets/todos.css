@@ -1,0 +1,286 @@
+.title, .title_date, .title_category, .container_header p {
+    display: inline;
+}
+
+#header {
+	background: #195D00;
+	padding: 10px 10px 0;
+}
+
+#header h1 {
+	color: #ffffff;
+	font-size: 24px;
+	display: inline-block;
+}
+
+#header h1 span{
+	font-size: 16px;
+	color: #D1EEFF;
+}
+
+#user_nav{
+	float: right;
+	color: #D1EEFF;
+	font-size: 10px;
+}
+
+#user_nav a {
+	color: #D1EEFF;
+}
+
+#tabs ul{
+	margin: 0;
+	padding: 3px;
+}
+
+#tabs li{
+	border: medium none;
+  display: inline;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+
+#tabs a{
+	background-color: #217A00;
+  color: #D1EEFF;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.clearfix:after { 
+	visibility: hidden; 
+	display: block; 
+	font-size: 0; 
+	content: " "; 
+	clear: both; 
+	height: 0; 
+}
+
+#todo_link a{
+	color: black;
+	background: #E5E5E5;
+}
+
+#container{
+	background: #FFFFFF;
+	box-shadow: 3px 3px 4px #BBBBBB;
+	display: inline-block;
+	margin-left: 2%;
+	margin-top: 20px;
+	padding: 0 0 20px;
+	width: 64%;
+}
+
+#new_task{
+	padding: 5px;
+}
+
+.container_header{
+	background: none repeat scroll 0 0 #EDF3FE;
+	margin-top: -22px;
+    
+}
+
+.container_header h4, #incomplete_tasks h4, #completed_tasks h4 {
+	margin-left: 20px;
+	padding: 5px;
+}
+
+#incomplete_tasks h4, #completed_tasks h4, .title_date, .title_category {
+	background: none repeat scroll 0 0 #EDF3FE;	
+}
+
+.container_data {
+	padding: 5px;
+	margin-left: 10px;
+}
+
+.swap_to{
+	display: none;
+}
+
+.swap_from a{
+	color: black;
+	font-weight: bold;
+	margin-left: 25px;
+}
+
+#create_button{
+	height: 31px;
+	width: 130px;
+}
+
+.button{
+	
+	border: 3px solid #c8c8c8;
+	border-radius: 20px ;
+	background:-moz-linear-gradient(top, #ffffff 16%, #ededed 96%, #ffffff 100%);
+	background:-webkit-linear-gradient(top, #ffffff 16%, #ededed 96%, #ffffff 100%);
+	background:-ms-linear-gradient(top, #ffffff 16%, #ededed 96%, #ffffff 100%); 
+}
+
+ .right a {
+ 	text-decoration: none;
+ 	color: black;
+
+ }
+
+.create_image {
+	background: url("create.png");
+	height: 16px;
+	width: 16px;
+	display: inline-block;
+	margin: 8px;
+}
+
+#create_text{
+	position: relative;
+	top: -10px;
+}
+
+.right{
+	display: inline-block;
+	margin-left: 50px;
+	height:200px;
+	width: 200px;	
+}
+
+.task_categories a {
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: -35px;
+	/*padding-left: 15px;*/
+}
+
+.delete_icon{
+	display: inline-block;
+	height: 11px;
+	width: 10px;
+	background: url('logo.png') no-repeat -94px 0;
+	position: relative;
+	top: 4px;
+	left: -8px;
+}
+
+.drop_icon{
+	background: url('logo.png') no-repeat -290px -40px;
+	width: 13px;
+	height: 20px;
+	position: absolute;
+	left: 24px;
+
+}
+
+.delete_icon a{
+	padding: 5px 5px 0;
+	left: 35px;
+	position: relative;
+}
+
+.delete_button{
+	background: #ffffff;
+	display: inline-block;
+	width: 25px;
+	position: relative;
+	left: -35px;
+	border: none;
+	padding: 5px 15px;
+	visibility: hidden;
+}
+
+.container_data a{
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.task{
+	/*margin-left: 35px;*/
+	position: relative;
+}
+
+.title, .title_date, .title_category{
+	font-family: "Lucida Grande",verdana,arial,helvetica,sans-seri;
+	color: #333333;
+  font-size: 13px;
+}
+
+.title_date {
+	position: absolute;
+  right: 10px;
+  top: -12px;
+	
+}
+
+.title_category{
+  position: absolute;
+  right: 115px;
+  top: -12px;
+}
+
+.task_category{
+	margin-left: -30px;
+  padding-left: 30px;
+  position: relative;
+	
+}
+
+.link{
+	display: inline-block;
+}
+
+.todo_delete{
+	left: 0;
+	top:-10px;
+}
+
+.todo_drop_icon{
+	background: url('logo.png') no-repeat -290px -40px;
+	width: 13px;
+	height: 20px;
+	position: absolute;
+	left: 24px;
+
+}
+
+#adding_item {
+	background: none repeat scroll 0 0 #EFEFEF;
+  margin-left: 85px;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+#todos_submit{
+	border-top: 1px solid #CCCCCC;
+  padding-top: 5px;
+}
+
+#todos_submit a{
+	color: #FF0000;
+  font-family: verdana;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+#add_item{
+	color: #FF0000;
+  font-family: verdana;
+  font-size: 11px;
+  font-weight: normal;
+  margin-left: 80px;
+}
+
+#hidden_form{
+	display: none;
+}
+
+#completed_tasks .title{
+	text-decoration: line-through;
+}
+
+#search_form{
+	float: right;
+}

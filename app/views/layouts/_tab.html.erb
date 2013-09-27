@@ -1,0 +1,37 @@
+<div id="header">
+  <h1>Sewamein <span>sewamein</span> </h1>
+
+  <div id="user_nav">
+    <% if user_signed_in? %>
+      Signed in as <%= current_user.email %>. Not you?
+      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+    <% end %>
+  </div>
+
+  <div id="flash">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+  </div>
+
+  <div id="user_avatar">
+  <%# debugger %>
+    <%= image_tag @user.avatar_url.to_s %>
+  </div>
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#">Overview</a></li>
+      <li><%= link_to "Messages",new_user_message_path(@user.id) %></li>
+      <li id ="todo_link"><%= link_to "To-Dos",user_tasks_path(@user.id) %></li>
+      <li><a href="#">Calendar</a></li>
+      <li><a href="#">Writeboards</a></li>
+      <li><a href="#">Files</a></li>
+      <li><a href="#">People</a></li>
+      <li><a href="#">Search</a></li>
+    </ul>
+  </div>
+
+</div>

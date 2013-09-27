@@ -1,0 +1,14 @@
+<div id="adding_item">
+	<%= form_for([@user,@task,@todo], remote: true) do |f| %>
+		<p>
+		  <%= f.label :title, "Enter your todo" %><br/>
+		  <%= f.text_field :title, :class => "todos_title" %>
+		  <%= f.collection_select(:category_id, Category.all,:id, :name) %>
+		</p>
+		  
+		<div id="todos_submit">
+	   	<%= f.submit %> or<a href="">I'm done adding items</a>
+	  </div>
+	<% end %>
+</div>
+

@@ -1,0 +1,9 @@
+<% if @todo.completed == true %>
+	$('#incomplete_task_<%= params[:id] %>').remove();
+	$("#completed_tasks").append("<%= escape_javascript(render :partial => 'completed_task', :locals => {:todo => @todo}) %>");
+	$("#complete_task_<%= @todo.id %>").addClass('highlight');
+<% else %>
+	$('#complete_task_<%= params[:id] %>').remove();
+	$("#incomplete_tasks").append("<%= escape_javascript(render :partial => 'todo', :locals => {:todo => @todo}) %>");
+	$("#incomplete_task_<%= @todo.id %>").addClass('highlight');
+<% end %>

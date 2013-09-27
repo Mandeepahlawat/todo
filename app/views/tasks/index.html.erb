@@ -1,0 +1,32 @@
+<%= render 'layouts/tab' %>
+<div id="container">
+  <div class="swap_to">
+    <div class="container_header">
+      <h4>New To-do category</h4>
+    </div>
+
+    <div class="container_data">
+      <%= render 'form' %>
+      <a href="">Back</a>
+    </div>
+  </div>
+  <div class="swap_from">
+    <div class="container_header">
+      <h4>To-do Categories</h4>
+    </div>
+    <div class="task_categories container_data">
+    	<% @tasks.each do |task| %>
+     		<%= render :partial => "task", :locals => {:task => task} %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="right button" id="create_button">
+  <a href=""><span class="create_image"></span><span id="create_text"><b>Create New</b></span></a>
+</div>
+
+
+
+
+

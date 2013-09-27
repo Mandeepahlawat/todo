@@ -1,0 +1,15 @@
+<%= form_for([@user,@task], remote: true) do |f| %>
+  <p>
+    <%= f.label :title, "Enter your task" %><br/>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<h2>Import Tasks</h2>
+<%= form_tag import_user_tasks_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>

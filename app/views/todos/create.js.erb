@@ -1,0 +1,23 @@
+// alert("hello");
+<%# debugger %>
+// $.fn.animateHighlight = function(highlightColor, duration) {
+//     var highlightBg = highlightColor || "#FFFF9C";
+//     var animateMs = duration || 1500;
+//     var originalBg = this.css("backgroundColor");
+//     this.stop().css("background-color", highlightBg).animate({backgroundColor: originalBg}, animateMs);
+// };
+
+
+
+
+<% if params[:todo][:title]!= "" %>
+	$("#incomplete_tasks").append("<%= escape_javascript(render :partial => 'todo', :locals => {:todo => @todo}) %>");
+	$(".todos_title").val("");
+	$("#incomplete_task_<%=@todo.id %>").animate({backgroundColor: "#FFFF66"}).animate({backgroundColor: "transparent"},500);
+	// $("#incomplete_task_<%=@todo.id %>").addClass("highlight");
+	$('.swap_to').hide();
+	$('.swap_from').show();
+<% else %>
+	alert("Enter some task");
+<% end %>
+

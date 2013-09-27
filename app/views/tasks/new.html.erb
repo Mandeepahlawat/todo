@@ -1,0 +1,14 @@
+<%= form_for([@user,@task],:html => {:multipart => true}) do |f| %>
+  <p>
+    <%= f.label :title, "Enter your task" %><br/>
+    <%= f.text_field :title %>
+  </p>
+
+  <div>
+  	<%= f.file_field :upl_tasks %>
+  </div>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,10 @@
+<div>
+	<% if @posts %>
+		<% @posts.each do |post| %>
+		  <p><%= post.title %>
+		  <%= post.user.name %></p>
+		<% end %>
+	<% end %>
+</div>
+
+<p><%= link_to "import your last status from facebook", user_posts_path(@user.id), :method=> :post %></p>

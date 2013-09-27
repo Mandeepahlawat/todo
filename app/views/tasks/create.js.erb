@@ -1,0 +1,10 @@
+<% debugger %>
+<% if params[:task][:title]!= "" %>
+	$(".task_categories").append("<%= escape_javascript(render :partial => 'task', :locals => {:task => @task}) %>");
+	$("#task_title").val("");
+	$('.swap_to').hide();
+	$('.swap_from').show();
+	$('#create_button').show();
+<% else %>
+	alert("Enter some task");
+<% end %>
